@@ -468,7 +468,7 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
                     owner: recipient,
                     tickLower: tickLower,
                     tickUpper: tickUpper,
-                    liquidityDelta: int256(amount).toInt128()
+                    liquidityDelta: int128(amount)
                 })
             );
 
@@ -525,7 +525,7 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
                     owner: msg.sender,
                     tickLower: tickLower,
                     tickUpper: tickUpper,
-                    liquidityDelta: -int256(amount).toInt128()
+                    liquidityDelta: -int128(amount)
                 })
             );
 
