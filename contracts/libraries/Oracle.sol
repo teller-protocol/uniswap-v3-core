@@ -37,7 +37,7 @@ library Oracle {
         return
             Observation({
                 blockTimestamp: blockTimestamp,
-                tickCumulative: last.tickCumulative + uint32(int32(tick)) * delta,
+                tickCumulative: last.tickCumulative + int56(tick) * int56(uint56(delta)),
                 secondsPerLiquidityCumulativeX128: last.secondsPerLiquidityCumulativeX128 +
                     ((uint160(delta) << 128) / (liquidity > 0 ? liquidity : 1)),
                 initialized: true
